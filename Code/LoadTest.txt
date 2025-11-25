@@ -1,0 +1,134 @@
+This is ApacheBench, Version 2.3 <$Revision: 1923142 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking app-alb-1603566158.eu-north-1.elb.amazonaws.com (be patient)
+Completed 1000 requests
+Completed 2000 requests
+Completed 3000 requests
+Completed 4000 requests
+Completed 5000 requests
+Completed 6000 requests
+Completed 7000 requests
+Completed 8000 requests
+Completed 9000 requests
+Completed 10000 requests
+Finished 10000 requests
+
+
+Server Software:        Apache/2.4.65
+Server Hostname:        app-alb-1603566158.eu-north-1.elb.amazonaws.com
+Server Port:            80
+
+Document Path:          /
+Document Length:        185 bytes
+
+Concurrency Level:      100
+Time taken for tests:   0.951 seconds
+Complete requests:      10000
+Failed requests:        13
+   (Connect: 0, Receive: 0, Length: 13, Exceptions: 0)
+Non-2xx responses:      13
+Total transferred:      4527647 bytes
+HTML transferred:       1849181 bytes
+Requests per second:    10513.87 [#/sec] (mean)
+Time per request:       9.511 [ms] (mean)
+Time per request:       0.095 [ms] (mean, across all concurrent requests)
+Transfer rate:          4648.74 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.9      0       9
+Processing:     1    9   4.7      8      26
+Waiting:        1    9   4.7      8      25
+Total:          1    9   4.7      8      26
+
+Percentage of the requests served within a certain time (ms)
+  50%      8
+  66%     11
+  75%     13
+  80%     14
+  90%     16
+  95%     18
+  98%     19
+  99%     20
+ 100%     26 (longest request)
+
+
+
+
+
+
+
+
+ ✅ Test Configuration
+
+Concurrency Level: 100 → Number of simultaneous requests.
+Time taken for tests: 0.951 seconds → Total time for all requests.
+Complete requests: 10000 → Total requests sent.
+Failed requests: 13 → Requests that failed (due to length mismatch here).
+Non-2xx responses: 13 → Responses that were not HTTP 200 OK.
+Total transferred: 4527647 bytes → Total data including headers.
+HTML transferred: 1849181 bytes → Only HTML body data.
+
+
+✅ Performance Metrics
+
+Requests per second: 10513.87 [#/sec] → Throughput (higher is better).
+Time per request: 9.511 ms (mean) → Average time per request.
+Time per request (across all concurrent): 0.095 ms → Average per concurrent thread.
+Transfer rate: 4648.74 KB/sec → Data transfer speed.
+
+
+✅ Connection Times
+
+Connect: Time to establish TCP connection.
+Processing: Time to process the request.
+Waiting: Time waiting for response.
+Total: Sum of above.
+
+Example:
+min  mean[+/-sd] median   max
+Connect:        0    0   0.9      0       9
+Processing:     1    9   4.7      8      26
+Waiting:        1    9   4.7      8      25
+Total:          1    9   4.7      8      26
+
+
+mean: Average time
+sd: Standard deviation (variation)
+median: Middle value
+max: Longest request
+
+
+✅ Percentiles
+50%      8 ms
+66%     11 ms
+75%     13 ms
+80%     14 ms
+90%     16 ms
+95%     18 ms
+98%     19 ms
+99%     20 ms
+100%    26 ms
+
+This shows how fast most requests were served.
+Example: 90% of requests finished in ≤16 ms.
+
+
+✅ Is this a Load Test Result?
+Yes! ApacheBench is a load testing tool.
+
+You sent 10,000 requests with 100 concurrent users.
+The server handled 10,513 requests/sec, which is very high performance.
+Only 13 failed requests (likely due to response length mismatch).
+
+
+
+
+what is length mismatch?
+
+
+###ApacheBench expects the response body length to match the length of the first successful response it received (in your case, 185 bytes).
+If any subsequent response has a different length (e.g., extra spaces, dynamic content, error page), it counts as a failed request.
+

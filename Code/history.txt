@@ -1,0 +1,182 @@
+    1  clear
+    2  sudo yum update -y
+    3  sudo yum install -y yum-utils
+    4  sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
+    5  sudo yum install -y terraform
+    6  clear
+    7  terraform -version
+    8  sudo yum update -y
+    9  sudo yum install -y ansible
+   10  ansible --version
+   11  cd /etc/ansible/
+   12  ls -l
+   13  vi ansible.cfg
+   14  clear
+   15  cd /etc/ansible/
+   16  ls -l
+   17  vi ansible.cfg
+   18   ansible-config init --disabled > ansible.cfg
+   19  ansible -version
+   20  clear
+   21  ansible --version
+   22  terraform -v
+   23  aws configure
+   24  terraform init
+   25  ls
+   26  clear
+   27  ls
+   28  clear
+   29  vi provider.tf
+   30  vi network.tf
+   31  vi security.tf
+   32  cd .ssh/
+   33  ls
+   34  vi manoi.pem
+   35  cd ..
+   36  vi launch_temp.tf
+   37  vi alb.tf
+   38  cat alb.tf 
+   39  vi asg.tf
+   40  terraform init
+   41  terraform plan
+   42  terraform apply -auto-approve
+   43  clear
+   44  ls
+   45  vi network.tf 
+   46  rm -rf network.tf 
+   47  vi network.tf
+   48  cat network.tf 
+   49  clear
+   50  terraform plan
+   51  terraform apply -auto-approve
+   52  ls
+   53  vi launch_temp.tf 
+   54  terraform plan
+   55  terraform apply -auto-approve
+   56  clear
+   57  ls
+   58  cat asg.tf 
+   59  vi launch_temp.tf
+   60  terraform plan
+   61  ls
+   62  vi launch_temp.tf 
+   63  terraform plan
+   64  ls
+   65  cat alb.tf 
+   66  cat ansible.cfg 
+   67  clear
+   68  ls
+   69  vi launch_temp.tf 
+   70  cat launch_temp.tf 
+   71  vi launch_temp.tf 
+   72  terraform plan
+   73  vi launch_temp.tf 
+   74  terraform plan
+   75  terraform apply -auto-approve
+   76  vi playbook.yaml
+   77  ansible-playbook -i inventory playbook.yml
+   78  rm -rf playbook.yaml 
+   79  vi playbook.yml
+   80  ansible-playbook -i inventory playbook.yml
+   81  vi inventory.txt
+   82  aws ec2 describe-instances   --filters "Name=tag:Name,Values=app-template*" "Name=instance-state-name,Values=running"   --query "Reservations[*].Instances[*].PublicIpAddress"   --output text
+   83  ansible all -m ping
+   84  vi inventory.ini
+   85  ansible all -m ping
+   86  ssh ec2-user@13.60.246.180
+   87  ansible all -i inventory.ini -m ping
+   88  sudo ssh ec2-user@13.60.246.180
+   89  cd .ssh/
+   90  ls -la
+   91  cd ..
+   92  ssh -i manoi.pem ec2-user@13.60.246.180
+   93  ssh -i  ec2-user@13.60.246.180
+   94  ls
+   95  ssh -i ec2-user@13.60.246.180
+   96  ssh -i "manoi.pem" ec2-user@13.60.246.180
+   97  ls
+   98  cd .ssh
+   99  ls
+  100  cd ..
+  101  ssh -i "~/.ssh/manoi.pem" ec2-use@13.60.246.180
+  102  ssh -i "~/.ssh/manoi.pem" ec2-user@13.60.246.180
+  103  ssh -i ~/.ssh/manoi.pem ec2-user@13.60.246.180
+  104  clear
+  105  cd .ssh/
+  106  ls
+  107  ls -la
+  108  chmod 400 manoi.pem 
+  109  cd ..
+  110  ssh -i ~/.ssh/manoi.pem ec2-user@13.60.246.180
+  111  ssh -i ~/.ssh/manoi.pem ec2-user@51.20.118.54
+  112  clear
+  113  ansible all -m ping
+  114  ls
+  115  cat inventory.ini 
+  116  ansible all -i inventory.ini -m ping
+  117  cat ansible.cfg 
+  118  vi ansible.cfg 
+  119  ansible all -i inventory.ini -m ping
+  120  ansible-playbook -i inventory.ini playbook.yml
+  121  aws elbv2 describe-load-balancers --names app-alb
+  122  ab -n 10000 -c 100 http://app-alb-601084798.eu-north-1.elb.amazonaws.com/
+  123  ab -V
+  124  ab -n 10000 -c 100 http://app-alb-601084798.eu-north-1.elb.amazonaws.com/
+  125  aws autoscaling describe-auto-scaling-groups
+  126  cd /var/www/html
+  127  cd /var/www/html/
+  128  cd /var
+  129  ls
+  130  cd ..
+  131  ls
+  132  cd ..
+  133  ls
+  134  exit
+  135  ls
+  136  cat playbook.yml 
+  137  cd /var/www/html/
+  138  cd /var/www/html
+  139  cd /var/www/html/index.htm
+  140  cd /var/www/html/index.html
+  141  ls
+  142  cd var
+  143  ssh -i ~/.ssh/manoi.pem ec2-user@13.60.246.180
+  144  clear
+  145  ls
+  146  cat alb.tf 
+  147  clear
+  148  ls
+  149  cat asg.tf 
+  150  cat network.tf 
+  151  clear
+  152  ls
+  153  cat provider.tf 
+  154  ls
+  155  clear
+  156  ls
+  157  cat inventory.ini
+  158  cat launch_temp.tf 
+  159  cat security.tf 
+  160  clear
+  161  ls
+  162  ansible.cfg
+  163  cat ansible.cfg 
+  164   clear
+  165  ls
+  166  cat terraform.tfstate
+  167  clear
+  168  ls
+  169  cat playbook.yml 
+  170  ls
+  171  clear
+  172  history
+  173  cat playbook.yml 
+  174  history
+  175  clear
+  176  ls
+  177  clear
+  178  sudo su -
+  179  history
+  180  clear
+  181  history
+[ec2-user@ip-172-31-30-99 ~]$ 
